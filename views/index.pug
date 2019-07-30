@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    .col
+        if(userid == null) 
+            a.btn.btn-outline-secondary(href='/signin', data-toggle='modal', data-target='#signinModal') 로그인
+            include ./signin.pug
+        else 
+            a.btn.btn-outline-secondary(href='/signout') 로그아웃
+
