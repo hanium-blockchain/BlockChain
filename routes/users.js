@@ -5,6 +5,10 @@ router.get('/signin', (req, res, next) => {
     res.render('signin');
 });
 
+router.get('/join', (req, res, next) => {
+  res.render('join');
+})
+
 router.post('/signin/1', (req, res, next) =>  {
     req.app.locals.userid = "1";
     req.app.locals.username = "등록자";

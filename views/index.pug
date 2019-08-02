@@ -1,10 +1,14 @@
 extends layout
 
 block content
-    .col
-        if(userid == null) 
-            a.btn.btn-outline-secondary(href='/signin', data-toggle='modal', data-target='#signinModal') 로그인
-            include ./signin.pug
-        else 
-            a.btn.btn-outline-secondary(href='/signout') 로그아웃
+    h1.title blockchain
+    a.btn.btn-primary(href='/join') join for blockchain
+    
+    .row
+        .col
+            if(userid == null) 
+                a.btn.btn-outline-secondary(href='/signin', data-toggle='modal', data-target='#signinModal') 로그인
+                include ./signin.pug
+            else 
+                a.btn.btn-outline-secondary(href='/signout') 로그아웃
 
