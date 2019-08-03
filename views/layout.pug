@@ -15,7 +15,9 @@ html
         script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
 
     body
-        block header
+        //- if user
+        //-     block header
+        //-     block nav
         block hero-unit
             if flashMessages
                 each texts, type in flashMessages
@@ -26,3 +28,5 @@ html
                             button.close(type='button', data-dismiss='alert', aria-label='close')
                                 span(aria-hidden='true') &times;
         block content
+        //- if user 
+        //-     block footer
