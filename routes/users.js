@@ -1,6 +1,14 @@
 var express = require('express')
 var router = express.Router();
 
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '1234',
+  database: 'testDB',
+});
+
 function validateForm(form){
   var id = form.id || "";
   var password = form.password || "";
@@ -31,8 +39,46 @@ router.post('/', (req, res, next) => {
     req.flash('danger', err);
     return res.redirect('back');
   }
+
+  /*
+  connection.connect();
+
+  connection.query('SELECT * FROM user', function(error, results, fields){
+    if(error){
+      console.log(error);
+      console.log('error!!!!!');
+      req.flash('danger', 'DB connection error');
+      return res.redirect('back');
+    }
+    console.log('success!!!');
+    console.log(results);
+  });
+  connection.end();
+  */
+
+  connection.connect(function(err) {
+    if(err){
+      console.log(err);
+      console.log('connection error!!!!!');
+    }
+    console.log('success!!!!!')
+    var sql = "INSERT INTO user VALUES (?, ?, ?, ?, ?, true);"
+    var params = [req.body.id, req.body.password, req.body.name, req.body.email, req.body.phone];
+    connection.query(sql, params, function(err, result){
+      if(err){
+        console.log(err);
+        console.log('data insert error!!!!!');
+        return;
+      }
+      console.log('insert success!!!');
+      console.log(result.affectedRows);
+    })
+  });
+
   req.flash('success', 'Registered successfully');
   res.redirect('back');
+
+
 });
 
 router.get('/mypage', (req, res, next) => {
