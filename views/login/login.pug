@@ -1,19 +1,25 @@
 extends ../layout
 
 block content
-    .logoimg
+    .logo
+        img.logoImg(src="/images/logoimg.png", alt="로고이미지")
     .login
         h3 로그인
-        form(method="post", action='/login')
+        form(method="post", action='/users/login')
             .form-group.login
                 label 아이디
-                input#inputId.form-control(type="email", placeholder="아이디를 입력하세요")
-            .form-group.login
+                input#inputId.form-control(type="email", placeholder="아이디를 입력하세요", name="id")
+            .form-group.login.password
                 label 비밀번호
-                input#input.form-control(type="password", placeholder="비밀번호를 입력하세요")
-            button.btn(type='submit') 로그인하기
+                input#inputPwd.form-control(type="password", placeholder="비밀번호를 입력하세요", name="pwd")
+            .form-group.login
+                input#check(type="checkbox", name="autoLogin")
+                label.autoLogin(for="check") 자동로그인
+                    
+            .form-group.login
+                button.loginBtn.btn.btn-outline-secondary(type='submit') 로그인하기
         
-        a.btn.btn-primary(href='/join') join for blockchain
-        a.btn.btn-outline-secondary(href='/mypage') MyPage
+        a.btn.btn-primary(href='users/join') join for blockchain
+        a.btn.btn-outline-secondary(href='users/mypage') MyPage
 
 
