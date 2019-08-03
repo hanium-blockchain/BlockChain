@@ -30,7 +30,7 @@ h1.title, h3 {
 }
 
 button.submit{
-	width: 100px;
+	width: 15%;
 }
 
 .form-group-submit{
@@ -38,6 +38,16 @@ button.submit{
 	text-align: right;
 	margin-right: 15%;
 }
-	
+
+input.form-control.id, input.form-control.phone{
+	width: 70%;
+	margin-right: 10px;
+}
+
+a.id, a.phone{
+	width: 30%;
+	margin: 0 auto;
+}
+
 
 /*# sourceMappingURL=style.css.map */
