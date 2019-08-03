@@ -5,11 +5,15 @@ block content
     .login
         h3 로그인
         form(method="post", action='/login')
-            .form-group
+            .form-group.login
                 label 아이디
                 input#inputId.form-control(type="email", placeholder="아이디를 입력하세요")
-            .form-group
+            .form-group.login
                 label 비밀번호
                 input#input.form-control(type="password", placeholder="비밀번호를 입력하세요")
             button.btn(type='submit') 로그인하기
+        
+        a.btn.btn-primary(href='/join') join for blockchain
+        a.btn.btn-outline-secondary(href='/mypage') MyPage
+
 
