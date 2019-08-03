@@ -1,13 +1,66 @@
 var express = require('express')
 var router = express.Router();
 
+function validateForm(form){
+  var id = form.id || "";
+  var password = form.password || "";
+  var name = form.name || "";
+  var email = form.email || "";
+  var phone = form.phone || "";
+
+  if(!id){ return 'ID is required';}
+  if(!password){ return 'password is required';}
+  if(!name) { return 'name is required'; }
+  if(!email) { return 'email is required'; }
+  if(!phone) { return 'phone is required'; }
+
+  return null;
+}
+
 router.get('/signin', (req, res, next) => {
     res.render('signin');
 });
 
 router.get('/join', (req, res, next) => {
   res.render('join');
+});
+
+router.post('/', (req, res, next) => {
+  var err = validateForm(req.body);
+  if(err){
+    req.flash('danger', err);
+    return res.redirect('back');
+  }
+  req.flash('success', 'Registered successfully');
+  res.redirect('back');
+});
+
+router.get('/mypage', (req, res, next) => {
+  const user = {
+    id: 'sjfsilf',
+    name: 'kim djk',
+    email: 'asldkfja@naver.com',
+    phone: '010-88778-8888',
+    evaluator: true,
+  }
+  res.render('mypage', { user: user });
 })
+
+// router.get('/', function(req, res, next) {
+//   const user = {
+//     id: 'asdfa',
+//     name: 'asdkjfa',
+//     email: 'asldkfja',
+//     phone: 'asdfasd',
+//     evaluator: true,
+//   }
+//   res.render('index', { user: user });
+// });
+
+
+
+
+
 
 router.post('/signin/1', (req, res, next) =>  {
     req.app.locals.userid = "1";
