@@ -29,7 +29,7 @@ h1.title, h3 {
 	margin-bottom: 20px;
 }
 
-button.submit{
+button.submit, a.back{
 	width: 15%;
 }
 
