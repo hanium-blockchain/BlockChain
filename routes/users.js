@@ -40,7 +40,7 @@ router.get('/mypage', (req, res, next) => {
     id: 'sjfsilf',
     name: 'kim djk',
     email: 'asldkfja@naver.com',
-    phone: '010-8888-8888',
+    phone: '010-88778-8888',
     evaluator: true,
   }
   res.render('mypage', { user: user });
