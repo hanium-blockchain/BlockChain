@@ -33,6 +33,72 @@ router.get('/join', (req, res, next) => {
   res.render('join');
 });
 
+
+router.get('/mypage', (req, res, next) => {
+  const user = {
+    id: 'sjfsilf',
+    name: 'kim djk',
+    email: 'asldkfja@naver.com',
+    phone: '010-88778-8888',
+    evaluator: true,
+  }
+  res.render('mypage', { user: user });
+})
+
+
+router.get('/signout', (req, res) => {
+  req.app.locals.userid = null;
+  req.app.locals.username = null;
+  req.flash('success', 'Successfully signed out');
+  res.redirect('/')
+})
+
+router.post('/login', (req, res) => {
+  const user = {
+    id: '1',
+    pwd: '1'
+  }
+
+  var id = req.body.id
+  var pwd = req.body.pwd
+  console.log(req.body.autoLogin)
+
+  if (id == user.id) {
+    if (pwd == user.pwd) {
+      req.flash('success', 'login successfully');
+      res.render('main', {user:user})
+    } else {
+      console.log('비밀번호가 틀렸습니다')
+      res.redirect('back');
+    }
+  } else {
+    console.log('아이디가 틀렸습니다')
+    res.redirect('back');
+  }
+
+  // connection.connect(function(err) {
+  //   if(err){
+  //     console.log(err);
+  //     console.log('connection error!!!!!');
+  //   }
+  //   console.log('success!!!!!')
+  //   var sql = 'select * from user where id = ? and pwd = ?;';
+  //   var params = [req.body.id, req.body.pwd];
+  //   connection.query(sql, params, function(err, result){
+  //     if(err){
+  //       console.log(err);
+  //       console.log('data selelct error!!!!!');
+  //       return;
+  //     }
+  //     console.log('login success!!!');
+  //     console.log(result);
+  //     req.flash('success', 'login successfully');
+  //     res.render('main');
+  //   })
+  // });
+
+});
+
 router.post('/requestjoin', (req, res, next) => {
   var err = validateForm(req.body);
   if(err){
@@ -78,69 +144,6 @@ router.post('/requestjoin', (req, res, next) => {
   req.flash('success', 'Registered successfully');
   res.redirect('back');
 
-
 });
-
-router.get('/mypage', (req, res, next) => {
-  const user = {
-    id: 'sjfsilf',
-    name: 'kim djk',
-    email: 'asldkfja@naver.com',
-    phone: '010-88778-8888',
-    evaluator: true,
-  }
-  res.render('mypage', { user: user });
-})
-
-// router.get('/', function(req, res, next) {
-//   const user = {
-//     id: 'asdfa',
-//     name: 'asdkjfa',
-//     email: 'asldkfja',
-//     phone: 'asdfasd',
-//     evaluator: true,
-//   }
-//   res.render('index', { user: user });
-// });
-
-
-
-
-
-
-router.post('/signin/1', (req, res, next) =>  {
-    req.app.locals.userid = "1";
-    req.app.locals.username = "등록자";
-    req.flash('success', 'Welcome, 등록자!');
-    res.redirect('back')
-});
-
-router.post('/signin/2', (req, res, next) =>  {
-    req.app.locals.userid = "2";
-    req.app.locals.username = "평가자";
-    req.flash('success', 'Welcome, 평가자!');
-    res.redirect('back')
-});
-
-router.post('/signin/3', (req, res, next) =>  {
-  req.app.locals.userid = "3";
-  req.app.locals.username = "플랫폼";
-  req.flash('success', 'Welcome, 플랫폼!');
-  res.redirect('back')
-});
-
-router.post('/signin/4', (req, res, next) =>  {
-  req.app.locals.userid = "4";
-  req.app.locals.username = "투자자";
-  req.flash('success', 'Welcome, 투자자!');
-  res.redirect('back')
-});
-
-router.get('/signout', (req, res) => {
-    req.app.locals.userid = null;
-    req.app.locals.username = null;
-    req.flash('success', 'Successfully signed out');
-    res.redirect('/')
-})
 
 module.exports = router;

@@ -15,10 +15,12 @@ html
         script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
 
     body
-        //- if user
-        //-     block header
-        //-     block nav
-        block hero-unit
+        if user
+            block header
+                include ./includes/header
+            block nav
+                include ./includes/nav
+        block flash
             if flashMessages
                 each texts, type in flashMessages
                     .container
@@ -28,5 +30,6 @@ html
                             button.close(type='button', data-dismiss='alert', aria-label='close')
                                 span(aria-hidden='true') &times;
         block content
-        //- if user 
-        //-     block footer
+        if user 
+            block footer
+                include ./includes/footer
