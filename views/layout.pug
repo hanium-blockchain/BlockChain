@@ -15,6 +15,7 @@ html
         script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
 
     body
+        block header
         block hero-unit
             if flashMessages
                 each texts, type in flashMessages
@@ -24,4 +25,4 @@ html
                                 | #{msg} 
                             button.close(type='button', data-dismiss='alert', aria-label='close')
                                 span(aria-hidden='true') &times;
-    block content
+        block content
