@@ -33,7 +33,7 @@ router.get('/join', (req, res, next) => {
   res.render('join');
 });
 
-router.post('/', (req, res, next) => {
+router.post('/requestjoin', (req, res, next) => {
   var err = validateForm(req.body);
   if(err){
     req.flash('danger', err);
