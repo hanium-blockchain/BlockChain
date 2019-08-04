@@ -36,8 +36,22 @@ nav {
   background-color: rgba(98, 98, 104, 0.756)
 }
 
-li.mypage {
+#navbarSupportedContent li.mypage {
+  float: right;
+}
+.mypageDropdown {
+  width: 9em;
   text-align: right;
+  /* display: contents; */
+}
+img.mypageImg {
+  width: 3em;
+  padding-right: .3rem;
+}
+img.mypageImg {
+  display: inline;
+  /* width: 30%;
+  height: 30%; */
 }
 
 /* fooder css */
@@ -107,12 +121,21 @@ a.id, a.phone {
   width: 30%;
   margin: 0 auto; }
 
-<<<<<<< HEAD
-/*# sourceMappingURL=style.css.map */
-=======
+
+/* main page css */
+.mainPrice {
+  margin-top: -1.5em;
+  background-color: beige;
+  margin-right: 0;
+  margin-left: 0;
+  padding-top: 5em;
+}
+
 a {
   color: blueviolet;
 }
 
+h3.price {
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */
->>>>>>> 4cd9e0be8dca823bc5ec58093997c3755c50e40a
