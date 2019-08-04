@@ -11,13 +11,14 @@
                         span.sr-only (current)
                 li.nav-item
                     a.nav-link(href="#")
-                        | 1
+                        | 자산등록
                 li.nav-item
                     a.nav-link(href="#")
-                        | 2
-                li.nav-item
-                    a.nav-link(href="#")
-                        | 3
+                        | 투자
+                if user.evaluator
+                    li.nav-item
+                        a.nav-link(href="#")
+                            | 평가리스트
                 li.nav-item.dropdown
                     a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
                         | Dropdown

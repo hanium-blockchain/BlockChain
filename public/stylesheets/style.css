@@ -38,7 +38,17 @@ nav {
 
 /* fooder css */
 hr.footer-divider {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.terms {
+  margin-bottom: 1rem;
+  /* align-items: right; */
+  text-align: right;
+}
+
+.terms-body {
+  display: inline-block;
 }
 
 /* 로그인 css */
@@ -92,5 +102,9 @@ input.form-control.id, input.form-control.phone {
 a.id, a.phone {
   width: 30%;
   margin: 0 auto; }
+
+a {
+  color: blueviolet;
+}
 
 /*# sourceMappingURL=style.css.map */
