@@ -55,9 +55,7 @@ router.get('/mypage', (req, res, next) => {
 })
 
 
-router.get('/signout', (req, res) => {
-  req.app.locals.userid = null;
-  req.app.locals.username = null;
+router.get('/logout', (req, res) => {
   req.flash('success', 'Successfully signed out');
   res.redirect('/')
 })
@@ -83,10 +81,11 @@ router.post('/login', (req, res) => {
   if (id == '1' | id == '2') {
     if (pwd == '1') {
       req.flash('success', 'login successfully');
-      res.render('main', {user:user})
+      res.redirect('/main')
     } else if (pwd == '2') {
       req.flash('success', 'login successfully');
-      res.render('main', {user:user_})
+      res.redirect('/main');
+      // res.render('main', {user:user_})
     } else {
       console.log('비밀번호가 틀렸습니다')
       res.redirect('back');

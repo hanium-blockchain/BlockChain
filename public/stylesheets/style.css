@@ -109,6 +109,13 @@ p.nav-link {
 }
 
 /* 로그인 css */
+.loginBody {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
 .logo {
   text-align: center; }
 
@@ -124,7 +131,8 @@ p.nav-link {
   width: 25%;
   margin-bottom: 20px; }
 
-.loginBtn {
+.loginBtn, .signinBtn {
+
   width: 100%; }
 
 .login.form-group.password {
@@ -134,7 +142,8 @@ p.nav-link {
   margin: 5px; }
 
 .autoLogin {
-  font-size: 90%; }
+  font-size: 90%;
+  width: 5rem; }
 
 /* 회원가입 css */
 .signin.form-group {
