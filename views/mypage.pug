@@ -2,11 +2,22 @@ extends layout
 
 block content
     .container
-        h1.title Mypage
+        h2.title Mypage
         br
-        p=user.id
-        p=user.name
-        p=user.email
-        p=user.phone
-
+        br
+        br
+        .form-group
+            label ID
+            p2=user.id
+        .form-group
+            label NAME
+            p2=user.name
+        .form-group
+            label EMAIL
+            p2=user.email
+        .form-group
+            label PHONE
+            p2=user.phone
+        br
+        br
         
