@@ -36,6 +36,10 @@ nav {
   background-color: rgba(98, 98, 104, 0.756)
 }
 
+li.mypage {
+  text-align: right;
+}
+
 /* fooder css */
 hr.footer-divider {
   margin-bottom: 1.5rem;
