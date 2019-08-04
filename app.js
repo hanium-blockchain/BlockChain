@@ -25,12 +25,12 @@ app.use(cookieParser());
 
 app.use(methodOverride('_method', {methods: ['POST', 'GET']}));
 
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: true, // true = .sass and false = .scss
-  sourceMap: true
-}));
+// app.use(sassMiddleware({
+//   src: path.join(__dirname, 'public'),
+//   dest: path.join(__dirname, 'public'),
+//   indentedSyntax: true, // true = .sass and false = .scss
+//   sourceMap: true
+// }));
 
 app.use(session({
   resave: true,
