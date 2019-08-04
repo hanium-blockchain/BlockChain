@@ -157,18 +157,39 @@ a.id, a.phone {
   padding-bottom: 5em;
 }
 
-img.price {
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-}
-
 h3.price{
   font-family: 'Nanum Gothic', sans-serif;
   font-weight: bold;
   text-align: center;
   color: white;
 }
+
+.chart-list{
+  display: flex;
+  margin: 0 auto;
+}
+
+.chart{
+  align-items: center;
+  text-align: center;
+}
+
+img.price {
+  width: 95%;
+  height: 15em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+}
+
+h5.price {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+}
+
 
 .menu {
   display: flex;
@@ -177,8 +198,15 @@ h3.price{
 }
 
 .list {
-  background-color: cadetblue;
+  background-color: #000054;
   width: 50%;
+  padding-top: 2em;
+  opacity : 0.95;
+}
+
+h3.list {
+  text-align: center;
+  color: white;
 }
 
 .asset {
