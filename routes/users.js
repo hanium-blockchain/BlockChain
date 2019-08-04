@@ -32,7 +32,16 @@ router.get('/signin', (req, res, next) => {
 router.get('/join', (req, res, next) => {
   res.render('join');
 });
-
+router.get('/mypage_ch', (req, res, next) => {
+  const user = {
+    id: 'sjfsilf',
+    name: 'kim djk',
+    email: 'asldkfja@naver.com',
+    phone: '010-88778-8888',
+    evaluator: true,
+  }
+  res.render('mypage_ch', { user: user });
+})
 
 router.get('/mypage', (req, res, next) => {
   const user = {
