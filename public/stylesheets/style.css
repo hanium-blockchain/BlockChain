@@ -129,7 +129,32 @@ a.id, a.phone {
   margin-right: 0;
   margin-left: 0;
   padding-top: 5em;
+  padding-bottom: 5em;
 }
+
+img.price {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.menu {
+  display: flex;
+  margin: 0 auto;
+  height: 15em;
+}
+
+.list {
+  background-color: cadetblue;
+  width: 50%;
+}
+
+.asset {
+  background-color: cornflowerblue;
+  width: 50%;
+}
+
+
 
 a {
   color: blueviolet;
