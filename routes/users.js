@@ -56,17 +56,26 @@ router.get('/signout', (req, res) => {
 router.post('/login', (req, res) => {
   const user = {
     id: '1',
-    pwd: '1'
+    pwd: '1',
+    evaluator: true
+  }
+  const user_ = {
+    id: '2',
+    pwd: '2',
+    evaluator: false
   }
 
   var id = req.body.id
   var pwd = req.body.pwd
   console.log(req.body.autoLogin)
 
-  if (id == user.id) {
-    if (pwd == user.pwd) {
+  if (id == '1' | id == '2') {
+    if (pwd == '1') {
       req.flash('success', 'login successfully');
       res.render('main', {user:user})
+    } else if (pwd == '2') {
+      req.flash('success', 'login successfully');
+      res.render('main', {user:user_})
     } else {
       console.log('비밀번호가 틀렸습니다')
       res.redirect('back');

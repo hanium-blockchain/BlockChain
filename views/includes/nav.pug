@@ -11,13 +11,14 @@
                         span.sr-only (current)
                 li.nav-item
                     a.nav-link(href="#")
-                        | 1
+                        | 자산등록
                 li.nav-item
                     a.nav-link(href="#")
-                        | 2
-                li.nav-item
-                    a.nav-link(href="#")
-                        | 3
+                        | 투자
+                if user.evaluator
+                    li.nav-item
+                        a.nav-link(href="#")
+                            | 평가리스트
                 li.nav-item.dropdown
                     a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
                         | Dropdown
@@ -27,6 +28,41 @@
                         a.dropdown-item(href='#') Action3
                         .dropdown-divider
                         a.dropdown-item(href='#') Something else here
+                li.nav-item.dropdown.mypage
+                    a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                        | #{user.name}님
+                    .dropdown-menu(aria-labelledby='navbarDropdown')
+                        a.dropdown-item(href='#') 마이페이지
+                        .dropdown-divider
+                        a.dropdown-item(href='#') 내 정보 수정
+                        .dropdown-divider
+                        a.dropdown-item(href='#') 로그아웃
+
+            //- nav.navbar.navbar-expand-lg.navbar-dark
+            //-     ul.navbar-nav.mr-auto
+            //-     li.nav-item.active
+            //-         a.nav-link(href="#")
+            //-             | Home
+            //-             span.sr-only (current)
+            //-     li.nav-item
+            //-         a.nav-link(href="#")
+            //-             | 자산등록
+            //-     li.nav-item
+            //-         a.nav-link(href="#")
+            //-             | 투자
+            //-     if user.evaluator
+            //-         li.nav-item
+            //-             a.nav-link(href="#")
+            //-                 | 평가리스트
+            //-     li.nav-item.dropdown
+            //-         a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            //-             | Dropdown
+            //-         .dropdown-menu(aria-labelledby='navbarDropdown')
+            //-             a.dropdown-item(href='#') Action1
+            //-             a.dropdown-item(href='#') Action2
+            //-             a.dropdown-item(href='#') Action3
+            //-             .dropdown-divider
+            //-             a.dropdown-item(href='#') Something else here
 
 
 
