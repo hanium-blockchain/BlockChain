@@ -57,11 +57,13 @@ router.post('/login', (req, res) => {
   const user = {
     id: '1',
     pwd: '1',
+    name: 'leean',
     evaluator: true
   }
   const user_ = {
     id: '2',
     pwd: '2',
+    name: 'lili',
     evaluator: false
   }
 

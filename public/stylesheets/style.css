@@ -36,8 +36,22 @@ nav {
   background-color: rgba(98, 98, 104, 0.756)
 }
 
-li.mypage {
+#navbarSupportedContent li.mypage {
+  float: right;
+}
+.mypageDropdown {
+  width: 9em;
   text-align: right;
+  /* display: contents; */
+}
+img.mypageImg {
+  width: 3em;
+  padding-right: .3rem;
+}
+img.mypageImg {
+  display: inline;
+  /* width: 30%;
+  height: 30%; */
 }
 
 /* fooder css */
@@ -115,6 +129,10 @@ a.id, a.phone {
   margin-right: 0;
   margin-left: 0;
   padding-top: 5em;
+}
+
+a {
+  color: blueviolet;
 }
 
 h3.price {
