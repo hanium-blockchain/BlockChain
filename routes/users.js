@@ -5,7 +5,7 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '1234',
+  password: '0000',
   database: 'testDB',
 });
 
@@ -74,47 +74,47 @@ router.post('/login', (req, res) => {
     evaluator: false
   }
 
-  var id = req.body.id
-  var pwd = req.body.pwd
-  console.log(req.body.autoLogin)
+  // var id = req.body.id
+  // var pwd = req.body.pwd
+  // console.log(req.body.autoLogin)
 
-  if (id == '1' | id == '2') {
-    if (pwd == '1') {
-      req.flash('success', 'login successfully');
-      res.redirect('/main')
-    } else if (pwd == '2') {
+  // if (id == '1' | id == '2') {
+  //   if (pwd == '1') {
+  //     req.flash('success', 'login successfully');
+  //     res.redirect('/main')
+  //   } else if (pwd == '2') {
+  //     req.flash('success', 'login successfully');
+  //     res.redirect('/main');
+  //     // res.render('main', {user:user_})
+  //   } else {
+  //     console.log('비밀번호가 틀렸습니다')
+  //     res.redirect('back');
+  //   }
+  // } else {
+  //   console.log('아이디가 틀렸습니다')
+  //   res.redirect('back');
+  // }
+
+  connection.connect(function(err) {
+    if(err){
+      console.log(err);
+      console.log('connection error!!!!!');
+    }
+    console.log('success!!!!!')
+    var sql = 'select * from users where user_id = ? and pw = ?;';
+    var params = [req.body.id, req.body.pwd];
+    connection.query(sql, params, function(err, result){
+      if(err){
+        console.log(err);
+        console.log('data selelct error!!!!!');
+        return;
+      }
+      console.log('login success!!!');
+      console.log(result);
       req.flash('success', 'login successfully');
       res.redirect('/main');
-      // res.render('main', {user:user_})
-    } else {
-      console.log('비밀번호가 틀렸습니다')
-      res.redirect('back');
-    }
-  } else {
-    console.log('아이디가 틀렸습니다')
-    res.redirect('back');
-  }
-
-  // connection.connect(function(err) {
-  //   if(err){
-  //     console.log(err);
-  //     console.log('connection error!!!!!');
-  //   }
-  //   console.log('success!!!!!')
-  //   var sql = 'select * from user where id = ? and pwd = ?;';
-  //   var params = [req.body.id, req.body.pwd];
-  //   connection.query(sql, params, function(err, result){
-  //     if(err){
-  //       console.log(err);
-  //       console.log('data selelct error!!!!!');
-  //       return;
-  //     }
-  //     console.log('login success!!!');
-  //     console.log(result);
-  //     req.flash('success', 'login successfully');
-  //     res.render('main');
-  //   })
-  // });
+    })
+  });
 
 });
 

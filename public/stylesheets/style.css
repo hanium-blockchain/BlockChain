@@ -251,7 +251,8 @@ h3.list {
 h4 {
   font-family: 'Nanum Gothic', sans-serif;
   font-weight: bold;
-  padding: 1em;
+  /* padding: 1em; */
+  padding: 1em 0;
 }
 
 button.token {
@@ -263,6 +264,10 @@ a {
 }
 a:hover {
   color: rgb(171, 209, 221);
+}
+
+.div {
+  padding: 5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
