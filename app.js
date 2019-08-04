@@ -11,8 +11,25 @@ var flash = require('connect-flash');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var estimationsRouter = require('./routes/estimations');
+var investmentsRouter = require('./routes/investments');
+var registersRouter = require('./routes/registers');
+var termsRouter = require('./routes/terms');
 
 var app = express();
+
+app.locals.user1  = {
+  id: '1',
+  pwd: '1',
+  name: 'leean',
+  evaluator: true
+}
+app.locals.user2 = {
+  id: '2',
+  pwd: '2',
+  name: 'lili',
+  evaluator: false
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,6 +65,10 @@ app.use(function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/estimations', estimationsRouter);
+app.use('/investments', investmentsRouter);
+app.use('/registers', registersRouter);
+app.use('/terms',termsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
