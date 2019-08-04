@@ -19,8 +19,8 @@ h1.title, h3 {
   margin-bottom: 25px; }
 
 .main-content{
-  padding-left: 8%;
-  padding-right: 8%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 /* header css */
@@ -225,27 +225,53 @@ h5.price {
   height: 15em;
 }
 
-.list {
-  background-color: #000054;
-  width: 50%;
-  padding-top: 2em;
-  opacity : 0.95;
-}
-
 h3.list {
   text-align: center;
   color: white;
 }
 
-.asset {
-  background-color: cornflowerblue;
+/* main-invest List */
+.invest-list {
+  padding: 0.7em;
+  border-radius: 5%;
+  background-color: #ffffff4a;
   width: 50%;
-  text-align: center;
+  padding-top: 2em;
+  opacity : 0.95;
 }
 
+.menu {
+  height: 100%;
+}
+
+/* main - myAssets */
+.my-asset {
+  padding: 0.5em;
+  border-radius: 5%;
+  background-color: rgba(255, 255, 255, 0.529);
+  text-align: center;
+  height: 220px;
+}
+
+.asset-label-row {
+  margin-top: 1em;
+  text-align: center;
+  color: rgb(223, 218, 244);
+}
 .asset-row {
+  /* display: flex; */
+  margin: 0 auto;
+  text-align: center;
+}
+/* .asset-btn-row {
   display: flex;
   margin: 0 auto;
+} */
+span {
+  color: rgb(211, 67, 147);
+}
+h6 {
+  text-align: center;
 }
 
 h4 {
@@ -257,6 +283,8 @@ h4 {
 
 button.token {
   width : 10em;
+  font-size: 13px;
+  margin: 0.5em 0.5em;
 }
 
 a {

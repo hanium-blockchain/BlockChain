@@ -124,23 +124,6 @@ router.post('/users/requestjoin', (req, res, next) => {
     req.flash('danger', err);
     return res.redirect('back');
   }
-
-  /*
-  connection.connect();
-
-  connection.query('SELECT * FROM user', function(error, results, fields){
-    if(error){
-      console.log(error);
-      console.log('error!!!!!');
-      req.flash('danger', 'DB connection error');
-      return res.redirect('back');
-    }
-    console.log('success!!!');
-    console.log(results);
-  });
-  connection.end();
-  */
-
   connection.connect(function(err) {
     if(err){
       console.log(err);

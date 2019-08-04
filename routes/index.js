@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/main', function(req, res, next) {
-  res.render('main', {user:req.app.locals.user1});
+  const asset = {
+    asset: 10000,
+    token: 100
+  }
+  res.render('main', {user:req.app.locals.user1, asset:asset});
 });
 
 module.exports = router;
