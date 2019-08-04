@@ -1,8 +1,9 @@
 @charset "UTF-8";
 body {
-  padding: 50px;
+  padding: 0px;
   padding-top: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
+}
 
 a {
   color: #00B7FF; }
@@ -14,17 +15,36 @@ h1.title, h3 {
   text-align: center;
   margin-bottom: 25px; }
 
-/* header css */
-.header {
-  min-height: 15em;
-  background-color: rgb(50, 46, 67);
-  color: white;
-  text-shadow: 2px 2px 10px rgba(165, 162, 167, 0.3);
-  padding-top: 5em;
-  margin-bottom: -0.6em;
+.main-content{
+  padding-left: 8%;
+  padding-right: 8%;
 }
+
+/* header css */
 h1.mainTitle {
   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Abril Fatface', cursive;
+  font-size: 4.5em;
+  opacity: 0.7;
+}
+
+.header-title{
+  color: white;
+  height: 15em;
+  width: 100%;
+  position: relative;
+  background-color: black;
+}
+
+img.header-png{
+  height: 15em;
+  width: 100%;
+  opacity: 0.7;
+  filter: alpha(opacity=80);
 }
 
 /* navbar css */
@@ -33,7 +53,7 @@ h1.mainTitle {
 }
 
 nav {
-  background-color: rgba(98, 98, 104, 0.756)
+  background-color: #25226F;
 }
 
 #navbarSupportedContent li.mypage {
@@ -120,6 +140,95 @@ input.form-control.id, input.form-control.phone {
 a.id, a.phone {
   width: 30%;
   margin: 0 auto; }
+
+
+/* main page css */
+.main-content{
+  background-image: url('https://timedotcom.files.wordpress.com/2017/10/229-westerlund-21.jpg?w=1520&quality=85&h=1139');
+}
+
+.mainPrice {
+  margin-top: -1.5em;
+  background-color: black;
+  opacity: 0.9;
+  margin-right: 0;
+  margin-left: 0;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+h3.price{
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+.chart-list{
+  display: flex;
+  margin: 0 auto;
+}
+
+.chart{
+  align-items: center;
+  text-align: center;
+}
+
+img.price {
+  width: 95%;
+  height: 15em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+}
+
+h5.price {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+}
+
+
+.menu {
+  display: flex;
+  margin: 0 auto;
+  height: 15em;
+}
+
+.list {
+  background-color: #000054;
+  width: 50%;
+  padding-top: 2em;
+  opacity : 0.95;
+}
+
+h3.list {
+  text-align: center;
+  color: white;
+}
+
+.asset {
+  background-color: cornflowerblue;
+  width: 50%;
+  text-align: center;
+}
+
+.asset-row {
+  display: flex;
+  margin: 0 auto;
+}
+
+h4 {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: bold;
+  padding: 1em;
+}
+
+button.token {
+  width : 10em;
+}
 
 a {
   color: blueviolet;

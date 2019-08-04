@@ -6,18 +6,20 @@ block content
         br
         br
         br
+
         .form-group
-            label ID
+            label(for='id') ID
             p2=user.id
         .form-group
-            label NAME
+            label(for='name') NAME
             p2=user.name
         .form-group
-            label EMAIL
+            label(for='email') EMAIL
             p2=user.email
         .form-group
-            label PHONE
+            label(for='phone') PHONE
             p2=user.phone
-        br
-        br
-        
+            br
+            br
+
+        a.nav-link.active(href='/users/mypage_ch') 내 정보 수정

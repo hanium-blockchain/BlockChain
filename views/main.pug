@@ -1,5 +1,53 @@
 extends layout
 
 block content
-    .main
-        h1 메인 페이지~~
+    .main-content
+        .mainPrice
+            .row.price
+                .col.price
+                    h3.price 블록체인 시세
+                    .chart-list
+                        .chart
+                            img.price(src='/images/blockchainGraph.png' alt='graph')
+                            h5.price 시장 가격
+                        .chart
+                            img.price(src='/images/blockchainGraph.png' alt='graph')
+                            h5.price 누적 채굴량
+                        .chart
+                            img.price(src='/images/blockchainGraph.png' alt='graph')
+                            h5.price 거래 규모
+                    
+                    br
+                    br
+                    br
+                    br
+
+                    .chart-list
+                        .chart
+                            img.price(src='/images/blockchainGraph.png' alt='graph')
+                            h5.price 일당 거래의 총 수  
+                        .chart
+                            img.price(src='/images/blockchainGraph.png' alt='graph')
+                            h5.price 고유 주소 
+                        .chart
+                            img.price(src='/images/blockchainGraph.png' alt='graph')
+                            h5.price 거래 비율
+
+        .menu
+            .list
+                h5.price 투자 내역 리스트
+            .asset
+                .asset-row
+                    span.fa.fa-arrow-up.fa-3x
+                    h4 보유 자산
+
+                .asset-row
+                    i.fa-hand-holding-usd.fa-2x
+                    i.fa.fa-arrow-up.fa-3x 
+                    h4 보유 토큰 
+
+                .asset-row
+                    button.btn.btn-secondary.token 토큰 사용 내역
+                    button.btn.btn-secondary.token 토큰 변환
+                    
+
