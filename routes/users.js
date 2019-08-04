@@ -99,7 +99,7 @@ router.post('/login', (req, res) => {
 
 });
 
-router.post('/requestjoin', (req, res, next) => {
+router.post('/users/requestjoin', (req, res, next) => {
   var err = validateForm(req.body);
   if(err){
     req.flash('danger', err);
@@ -128,7 +128,7 @@ router.post('/requestjoin', (req, res, next) => {
       console.log('connection error!!!!!');
     }
     console.log('success!!!!!')
-    var sql = "INSERT INTO user VALUES (?, ?, ?, ?, ?, true);"
+    var sql = "INSERT INTO users(user_id, pw, name, email, phone) VALUES (?, ?, ?, ?, ?);"
     var params = [req.body.id, req.body.password, req.body.name, req.body.email, req.body.phone];
     connection.query(sql, params, function(err, result){
       if(err){
