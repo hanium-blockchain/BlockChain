@@ -30,7 +30,7 @@ router.get('/signin', (req, res, next) => {
 });
 
 router.get('/join', (req, res, next) => {
-  res.render('/user/join');
+  res.render('user/join');
 });
 router.get('/mypage_ch', (req, res, next) => {
   const user = {
@@ -40,7 +40,7 @@ router.get('/mypage_ch', (req, res, next) => {
     phone: '010-88778-8888',
     evaluator: true,
   }
-  res.render('/user/mypage_ch', { user: user });
+  res.render('user/mypage_ch', { user: user });
 })
 
 router.get('/mypage', (req, res, next) => {
@@ -51,7 +51,7 @@ router.get('/mypage', (req, res, next) => {
     phone: '010-88778-8888',
     evaluator: true,
   }
-  res.render('mypage', { user: user });
+  res.render('user/mypage', { user: user });
 })
 
 
